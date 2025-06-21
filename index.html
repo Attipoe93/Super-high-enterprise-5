@@ -1,105 +1,75 @@
-<form id="registration-form">
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username"><br><br>
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email"><br><br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password"><br><br>
-  <label for="confirm-password">Confirm Password:</label>
-  <input type="password" id="confirm-password" name="confirm-password"><br><br>
-  <button type="submit">Register</button>
-</form>
-
-Login Form
-<form id="login-form">
-  <label for="username">Username/Email:</label>
-  <input type="text" id="username" name="username"><br><br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password"><br><br>
-  <button type="submit">Login</button>
-</form>
-
-Dashboard
-Dashboard Menu
-<nav id="dashboard-menu">
-  <ul>
-    <li><a href="                                      
-    <li><a href="#wallet">Wallet</a></li>
-    <li><a href="#order-history">Order History</a></li>
-  </ul>
-</nav>
-
-Data Packages
-Single Order Form
-<form id="single-order-form">
-  <label for="network">Network:</label>
-  <select id="network" name="network">
-    <option value="MTN">MTN</option>
-    <option value="AirtelTigo">AirtelTigo</option>
-    <option value="Telecel">Telecel</option>
-  </select><br><br>
-  <label for="data-package">Data Package:</label>
-  <select id="data-package" name="data-package">
-    <option value="1GB">1GB</option>
-    <!-- Add more options -->
-  </select><br><br>
-  <label for="phone-number">Phone Number:</label>
-  <input type="text" id="phone-number" name="phone-number"><br><br>
-  <button type="submit">Proceed to Pay</button>
-</form>
-
-Bulk Order Form
-<form id="bulk-order-form">
-  <label for="bulk-order-input">Enter bulk order details:</label>
-  <textarea id="bulk-order-input" name="bulk-order-input"></textarea><br><br>
-  <button type="submit">Place Bulk Order</button>
-</form>
-
-Wallet
-Wallet Top-Up Form
-<form id="wallet-top-up-form">
-  <label for="amount">Amount:</label>
-  <input type="number" id="amount" name="amount"><br><br>
-  <button type="submit">Top Up</button>
-</form>
-
-Wallet Transfer Form
-<form id="wallet-transfer-form">
-  <label for="recipient">Recipient:</label>
-  <input type="text" id="recipient" name="recipient"><br><br>
-  <label for="amount">Amount:</label>
-  <input type="number" id="amount" name="amount"><br><br>
-  <button type="submit">Transfer</button>
-</form>
-
-Order History
-Order History Table
-<table id="order-history-table">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Network</th>
-      <th>Data Package</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Populate table with order history data -->
-  </tbody>
-</table>
-
-Search and Filter Functionality
-<form id="search-filter-form">
-  <label for="date-range">Date Range:</label>
-  <select id="date-range" name="date-range">
-    <option value="today">Today</option>
-    <option value="yesterday">Yesterday</option>
-    <option value="last-week">Last Week</option>
-    <option value="last-month">Last Month</option>
-  </select><br><br>
-  <label for="network-filter">Network:</label>
-  <select id="network-filter" name="network-filter">
-    <option value="all">All</option>
-    <option value="MTN">MTN</option>
-    <option value="AirtelTigo">AirtelTigo</option>
-    <option value="Telecel">Tele
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super High Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Super High Services</h1>
+        <button onclick="showTab('login')">Login</button>
+        <button onclick="showTab('register')">Register</button>
+        <div id="login" class="tab">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username/Email:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div id="register" class="tab">
+            <h2>Register</h2>
+            <form id="register-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div id="dashboard" class="tab">
+            <h2>Dashboard</h2>
+            <button onclick="showTab('data-packages')">Data Packages</button>
+            <button onclick="showTab('wallet')">Wallet</button>
+            <button onclick="showTab('order-history')">Order History</button>
+        </div>
+        <div id="data-packages" class="tab">
+            <h2>Data Packages</h2>
+            <form id="data-package-form">
+                <label for="network">Network:</label>
+                <select id="network" name="network">
+                    <option value="MTN">MTN</option>
+                    <option value="AirtelTigo">AirtelTigo</option>
+                    <option value="Telecel">Telecel</option>
+                </select><br><br>
+                <label for="data-package">Data Package:</label>
+                <select id="data-package" name="data-package">
+                    <option value="1GB">1 GB</option>
+                    <option value="5GB">5 GB</option>
+                    <option value="10GB">10 GB</option>
+                </select><br><br>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" name="phone
+```
+                  
